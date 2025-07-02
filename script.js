@@ -1,4 +1,4 @@
-function genDay() {
+function genDay(dayName) {
   const hours = [
     "00",
     "01",
@@ -27,36 +27,32 @@ function genDay() {
     "24",
   ];
 
-  let hoursDivs = ``;
+  let hoursDivs = `<div class="dayName">${dayName}</div>`;
   for (let i = hours.length - 1; i >= 0; --i) {
-    const h = hours[i]
-    const divHour = `<div class="hour">${h}</div>`
+    const h = hours[i];
+    const divHour = `<div class="hour">${h}</div>`;
     hoursDivs += divHour;
   }
-  // for (const h of hours) {
-  //   const divHour = `<div class="hour">${h}</div>`
-  //   hoursDivs += divHour;
-  // }
 
   const dayDiv = `<div class="day">${hoursDivs}</div>`;
   return dayDiv;
 }
 
 function genWeek(count) {
-    const days = ["Пн", "Вт", "Ср", "Чт", "Пт", "С", "В"];
-    let daysDivs = '';
-    for (const day of days) {
-      const genDayHtml = genDay();
-      daysDivs += genDayHtml;
-    }
+  const days = ["Пн", "Вт", "Ср", "Чт", "Пт", "С", "В"];
+  let daysDivs = "";
+  for (const day of days) {
+    const genDayHtml = genDay(day);
+    daysDivs += genDayHtml;
+  }
 
-    const weekDiv = `<div class="week">${daysDivs}</div>`;
+  const weekDiv = `<div class="week">${daysDivs}</div>`;
 
-    return weekDiv
+  return weekDiv;
 }
 
 function initData() {
-  document.getElementById('main').innerHTML = genWeek();
+  document.getElementById("main").innerHTML = genWeek();
 }
 
 initData();
