@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Размерная игра</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      #score {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        /* font-size: 5%;  */
+        font-size: 15;
+        font-family: Arial, sans-serif;
+      }
+      #header {
+        border-radius: 10px;
+        position: absolute;
+        top: 0%;
+        height: 10%;
+        width: 100%;
+        font-size: 15;
+        background-color: rgb(206, 240, 240);
+      }
+      #footer {
+        border-radius: 10px;
+        position: absolute;
+        top: 90%;
+        height: 10%;
+        width: 100%;
+        font-size: 80%;
+        background-color: rgb(162, 134, 165);
+      }
+      #footerText {
+        position: absolute;
+        top: 10%;
+        left: 20%;
+        right: 20%;
+        height: 80%;
+        text-align: center;
+      }
+      #main {
+        border-radius: 10px;
+        position: absolute;
+        top: 10%;
+        height: 80%;
+        width: 100%;
+        font-size: 15;
+        background-color: rgb(238, 240, 239);
+      }
+      #leftArrowButton {
+        border-radius: 10px;
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        height: 80%;
+        width: 10%;
+        font-size: 120%;
+        background-color: rgb(238, 240, 239);
+      }
+      #leftArrowButton:hover {
+        /* background-color: rgb(228, 228, 228); */
+        /* border-radius: 30%; */
+        background-color: rgb(170, 212, 225);
+        /* transition: all 0.4s; */
+      }
+      /* click on button ainmation */
+      @keyframes slide-right {
+        from {
+          margin-left: 0px;
+        }
+
+        50% {
+          margin-left: 110px;
+          opacity: 0.5;
+        }
+
+        to {
+          margin-left: 200px;
+          opacity: 0.2;
+        }
+      }
+
+      #leftArrowButton:active {
+        top: 15%;
+      }
+      #rightArrowButton {
+        border-radius: 10px;
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        height: 80%;
+        width: 10%;
+        font-size: 120%;
+        background-color: rgb(238, 240, 239);
+      }
+      #rightArrowButton:hover {
+        background-color: rgb(170, 212, 225);
+      }
+      #rightArrowButton:active {
+        top: 15%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="main">PLANNER</div>
+    <div id="footer">
+      <div id="footerText">30.06 - 06-07</div>
+      <button id="leftArrowButton">🔙</button>
+      <button id="rightArrowButton">🔜</button>
+    </div>
+  </body>
+</html>
